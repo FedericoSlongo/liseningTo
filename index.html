@@ -27,6 +27,7 @@
         </div>
 
         <div id="themeSwitcher">
+        <button id="themeClose" class="close" aria-label="Hide theme switcher">[X]</button>
         <h2>Change the theme</h2>
         <p>
             <a href="#" onclick="enableStylesheet('default'); return false;">Default</a>,
@@ -44,6 +45,19 @@
             }
             });
         }
+
+        // Toggle hiding of the theme switcher. When hidden, CSS leaves a small tab visible
+        // so hovering can bring it back (hover rules are in CSS).
+        document.addEventListener('DOMContentLoaded', function() {
+            var closeBtn = document.getElementById('themeClose');
+            var switcher = document.getElementById('themeSwitcher');
+            if (closeBtn && switcher) {
+                closeBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    switcher.classList.toggle('hidden');
+                });
+            }
+        });
         </script>
     </body>
 

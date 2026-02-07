@@ -8,6 +8,11 @@ body {
     background-color: #C5FFFD;
     zoom: 90%; /* https://developer.mozilla.org/en-US/docs/Web/CSS/zoom 
     https://caniuse.com/css-zoom */
+    min-height: 100vh; /* ensure body fills viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 iframe{
@@ -58,12 +63,34 @@ a:hover {
     min-width: 120px;
     max-width: 220px;
     color: white;
+    transition: transform 0.18s ease, opacity 0.18s ease;
+    z-index: 50;
 }
+
+#themeSwitcher .close {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    background: transparent;
+    border: none;
+    color: #000000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#themeSwitcher.hidden {
+    transform: translateX(-90%);
+    opacity: 0.02;
+}
+
+#themeSwitcher:hover,
+#themeSwitcher.hidden:hover {
+    transform: translateX(0);
+    opacity: 1;
+}
+
 #themeSwitcher h2 {
     margin: 0 0 6px 0;
-}
-#themeSwitcher p {
-    margin: 0;
 }
 
 #siteButtons {
@@ -87,7 +114,7 @@ a:hover {
     align-items: center; /* vertically center title next to image */
     justify-content: center; /* horizontally center the whole block in the page */
     gap: 24px;
-    margin-top: 80px; /* give some space from top */
+    margin-top: 0; /* removed fixed top margin so centering can work */
 }
 
 .center-row .cover {

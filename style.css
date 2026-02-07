@@ -63,7 +63,34 @@ a:hover {
     min-width: 120px;
     max-width: 220px;
     color: white;
+    transition: transform 0.18s ease, opacity 0.18s ease;
+    z-index: 50;
 }
+
+#themeSwitcher .close {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* When hidden, move most of the switcher off-screen but leave a small vertical tab so hover can reveal it */
+#themeSwitcher.hidden {
+    transform: translateX(-90%);
+    opacity: 0.02;
+}
+
+/* Hovering the area (tab) or the switcher itself brings it back */
+#themeSwitcher:hover,
+#themeSwitcher.hidden:hover {
+    transform: translateX(0);
+    opacity: 1;
+}
+
 #themeSwitcher h2 {
     margin: 0 0 6px 0;
 }
