@@ -152,6 +152,27 @@ a:hover {
     width: 700px;
 }
 
+
+#creator {
+    position: fixed;
+    bottom: 12px;
+    right: 12px;
+    color: #0A100D;
+    font-family: 'monocraft';
+    font-size: 14px;
+    z-index: 40;
+}
+
+#creator a {
+    color: #A22C29;
+    text-decoration: none;
+}
+
+#creator a:hover {
+    text-decoration: underline;
+    color: #902923;
+}
+
 /* New layout styles */
 .center-row {
     display: flex;

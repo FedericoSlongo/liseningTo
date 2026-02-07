@@ -146,6 +146,26 @@ a:hover {
     opacity: 1;
 }
 
+#creator {
+    position: fixed;
+    bottom: 12px;
+    right: 12px;
+    color: #8789C0;
+    font-family: 'monocraft';
+    font-size: 14px;
+    z-index: 40;
+}
+
+#creator a {
+    color: #F0386B;
+    text-decoration: none;
+}
+
+#creator a:hover {
+    text-decoration: underline;
+    color: #FF5376;
+}
+
 .box{
     margin: auto;
     border: 5px solid gray;

@@ -144,6 +144,26 @@ a:hover {
     opacity: 1;
 }
 
+#creator {
+    position: fixed;
+    bottom: 12px;
+    right: 12px;
+    color: #85c1dc;
+    font-family: 'monocraft';
+    font-size: 14px;
+    z-index: 40;
+}
+
+#creator a {
+    color: #99d1db;
+    text-decoration: none;
+}
+
+#creator a:hover {
+    text-decoration: underline;
+    color: #a6d189;
+}
+
 #siteButtons {
     position: fixed;
     right: 20px;
