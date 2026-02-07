@@ -27,7 +27,7 @@
         </div>
 
         <div id="themeSwitcher">
-        <button id="themeClose" class="close" aria-label="Hide theme switcher">[X]</button>
+        <button id="themeClose" class="close" type="button" aria-label="Hide theme switcher">[X]</button>
         <h2>Change the theme</h2>
         <p>
             <a href="#" onclick="enableStylesheet('default'); return false;">Default</a>,
@@ -54,6 +54,7 @@
             if (closeBtn && switcher) {
                 closeBtn.addEventListener('click', function(e) {
                     e.preventDefault();
+                    e.stopPropagation();
                     switcher.classList.toggle('hidden');
                 });
             }
