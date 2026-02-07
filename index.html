@@ -35,6 +35,8 @@
             <a href="#" onclick="enableStylesheet('two'); return false;">Acqua</a>
         </p>
         </div>
+
+        <button id="fullscreenBtn" class="fullscreen-btn" type="button" aria-label="Toggle fullscreen">[fullscreen]</button>
         <script>
         function enableStylesheet(theme) {
             var themes = ["default", "one", "two"];
@@ -56,6 +58,34 @@
                     e.preventDefault();
                     e.stopPropagation();
                     switcher.classList.toggle('hidden');
+                });
+            }
+
+            // Fullscreen button functionality
+            var fullscreenBtn = document.getElementById('fullscreenBtn');
+            if (fullscreenBtn) {
+                fullscreenBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    if (!document.fullscreenElement) {
+                        // Enter fullscreen
+                        document.documentElement.requestFullscreen().catch(function(err) {
+                            console.error('Error attempting to enable fullscreen:', err);
+                        });
+                        fullscreenBtn.classList.add('hidden');
+                    } else {
+                        // Exit fullscreen
+                        document.exitFullscreen();
+                        fullscreenBtn.classList.remove('hidden');
+                    }
+                });
+
+                // Show the button again when exiting fullscreen
+                document.addEventListener('fullscreenchange', function() {
+                    if (!document.fullscreenElement) {
+                        fullscreenBtn.classList.remove('hidden');
+                    }
                 });
             }
         });

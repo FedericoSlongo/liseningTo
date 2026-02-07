@@ -118,6 +118,34 @@ a:hover {
     color: white;
 }
 
+.fullscreen-btn {
+    position: fixed;
+    top: 12px;
+    right: 20px;
+    background: rgba(30, 30, 30, 0.92);
+    padding: 8px 12px;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 18px;
+    transition: opacity 0.18s ease;
+    z-index: 50;
+}
+
+.fullscreen-btn:hover {
+    opacity: 0.8;
+}
+
+.fullscreen-btn.hidden {
+    opacity: 0.02;
+    pointer-events: auto;
+}
+
+.fullscreen-btn.hidden:hover {
+    opacity: 1;
+}
+
 .box{
     margin: auto;
     border: 5px solid gray;
