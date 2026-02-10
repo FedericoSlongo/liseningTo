@@ -60,8 +60,8 @@ a:hover {
     left: 12px;
     background: rgba(30, 30, 30, 0.92);
     padding: 12px 18px 12px 14px;
-    min-width: 300px;
-    max-width: 300px;
+    min-width: 330px;
+    max-width: 330px;
     color: white;
     transition: transform 0.18s ease, opacity 0.18s ease;
     z-index: 50;
